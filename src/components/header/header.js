@@ -1,71 +1,69 @@
-"use strict";
-import { fetchData } from "../fetchData.js";
+export default function initHeader(headerData) {
+  const $ = document;
 
-const $ = document;
+  /**
+   * Toggles mobile menu and icon state with fade effect
+   * @param {HTMLElement} menuElement
+   * @param {HTMLElement} iconWrapper
+   */
+  function toggleMobileMenu(menuElement, iconWrapper) {
+    const isOpen = menuElement.classList.contains("open");
 
-/**
- * Toggles mobile menu and icon state with fade effect
- * @param {HTMLElement} menuElement
- * @param {HTMLElement} iconWrapper
- */
-function toggleMobileMenu(menuElement, iconWrapper) {
-  const isOpen = menuElement.classList.contains("open");
+    // Toggle menu visibility
+    if (menuElement.classList.contains("translate-x-full")) {
+      menuElement.classList.toggle("translate-x-0");
+      menuElement.classList.toggle("translate-x-full");
+    } else {
+      menuElement.classList.toggle("hidden");
+    }
 
-  // Toggle menu visibility
-  if (menuElement.classList.contains("translate-x-full")) {
-    menuElement.classList.toggle("translate-x-0");
-    menuElement.classList.toggle("translate-x-full");
-  } else {
-    menuElement.classList.toggle("hidden");
+    // Toggle icons (fade effect)
+    const [hamburgerIcon, closeIcon] = iconWrapper.children;
+    if (isOpen) {
+      hamburgerIcon.classList.remove("opacity-0");
+      hamburgerIcon.classList.add("opacity-100");
+      closeIcon.classList.remove("opacity-100");
+      closeIcon.classList.add("opacity-0");
+      menuElement.classList.remove("open");
+    } else {
+      hamburgerIcon.classList.remove("opacity-100");
+      hamburgerIcon.classList.add("opacity-0");
+      closeIcon.classList.remove("opacity-0");
+      closeIcon.classList.add("opacity-100");
+      menuElement.classList.add("open");
+    }
   }
 
-  // Toggle icons (fade effect)
-  const [hamburgerIcon, closeIcon] = iconWrapper.children;
-  if (isOpen) {
-    hamburgerIcon.classList.remove("opacity-0");
-    hamburgerIcon.classList.add("opacity-100");
-    closeIcon.classList.remove("opacity-100");
-    closeIcon.classList.add("opacity-0");
-    menuElement.classList.remove("open");
-  } else {
-    hamburgerIcon.classList.remove("opacity-100");
-    hamburgerIcon.classList.add("opacity-0");
-    closeIcon.classList.remove("opacity-0");
-    closeIcon.classList.add("opacity-100");
-    menuElement.classList.add("open");
-  }
-}
+  class HeaderType1 extends HTMLElement {
+    async connectedCallback() {
+      const data = await headerData;
+      if (!data) return;
+      const menuHTML = data.menu.items
+        .map(
+          (item) =>
+            `<li class="menu-item"><a class="transition-colors">${item}</a></li>`
+        )
+        .join("");
+      const menuMobileHTML = data.menu.items
+        .map(
+          (item) =>
+            `<li class="menu-mobile-item"><a class="transition-colors">${item}</a></li>`
+        )
+        .join("");
 
-class HeaderType1 extends HTMLElement {
-  async connectedCallback() {
-    const data = await fetchData();
-    if (!data) return;
-    const menuHTML = data.menu.items
-      .map(
-        (item) =>
-          `<li class="menu-item"><a class="transition-colors">${item}</a></li>`
-      )
-      .join("");
-    const menuMobileHTML = data.menu.items
-      .map(
-        (item) =>
-          `<li class="menu-mobile-item"><a class="transition-colors">${item}</a></li>`
-      )
-      .join("");
+      this.render(data.menu.title, menuHTML, menuMobileHTML);
+      this.setDesktopLinks(data.menu.links);
+      this.setMobileLinks(data.menu.links);
+      this.setupMobileToggle();
+    }
 
-    this.render(data.menu.title, menuHTML, menuMobileHTML);
-    this.setDesktopLinks(data.menu.links);
-    this.setMobileLinks(data.menu.links);
-    this.setupMobileToggle();
-  }
-
-  render(title, menuHTML, menuMobileHTML) {
-    this.innerHTML = `
-      <nav class="menu-background bg-white shadow-md fixed w-full top-0 left-0 z-50">
+    render(title, menuHTML, menuMobileHTML) {
+      this.innerHTML = `
+      <nav class="menu-background bg-slate-100 dark:bg-slate-600 shadow-md fixed w-full top-0 left-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
 
           <!-- Logo -->
-          <h1 class="menu-main-title text-xl font-bold text-black transition-colors">
+          <h1 class="menu-main-title text-xl font-bold text-black dark:text-slate-100 transition-colors">
             <a href="./index.html">${title}</a>
           </h1>
 
@@ -84,7 +82,7 @@ class HeaderType1 extends HTMLElement {
           </div>
 
           <!-- Desktop Menu -->
-          <ul class="menuItemsWrapper hidden md:flex gap-6 text-gray-700 font-medium *:transition-all">
+          <ul class="menuItemsWrapper hidden md:flex gap-6 text-slate-700 dark:text-slate-100  font-medium *:transition-all">
             ${menuHTML}
           </ul>
         </div>
@@ -97,62 +95,62 @@ class HeaderType1 extends HTMLElement {
         </div>
       </nav>
     `;
-  }
+    }
 
-  setDesktopLinks(links) {
-    const allLinks = this.querySelectorAll(".menu-item a");
-    allLinks.forEach((a, index) => {
-      a.setAttribute("href", links[index] || "#");
-    });
-  }
-  setMobileLinks(links) {
-    const allLinks = this.querySelectorAll(".menu-mobile-item a");
-    allLinks.forEach((a, index) => {
-      a.setAttribute("href", links[index] || "#");
-    });
-  }
+    setDesktopLinks(links) {
+      const allLinks = this.querySelectorAll(".menu-item a");
+      allLinks.forEach((a, index) => {
+        a.setAttribute("href", links[index] || "#");
+      });
+    }
+    setMobileLinks(links) {
+      const allLinks = this.querySelectorAll(".menu-mobile-item a");
+      allLinks.forEach((a, index) => {
+        a.setAttribute("href", links[index] || "#");
+      });
+    }
 
-  setupMobileToggle() {
-    const hamburgerBtn = this.querySelector("#hamburger-btn");
-    const mobileMenu = this.querySelector("#mobile-menu");
-    const iconWrapper = hamburgerBtn;
+    setupMobileToggle() {
+      const hamburgerBtn = this.querySelector("#hamburger-btn");
+      const mobileMenu = this.querySelector("#mobile-menu");
+      const iconWrapper = hamburgerBtn;
 
-    if (hamburgerBtn && mobileMenu && iconWrapper) {
-      // Init state
-      iconWrapper.children[0].classList.add("opacity-100");
-      iconWrapper.children[1].classList.add("opacity-0");
+      if (hamburgerBtn && mobileMenu && iconWrapper) {
+        // Init state
+        iconWrapper.children[0].classList.add("opacity-100");
+        iconWrapper.children[1].classList.add("opacity-0");
 
-      hamburgerBtn.addEventListener("click", () =>
-        toggleMobileMenu(mobileMenu, iconWrapper)
-      );
+        hamburgerBtn.addEventListener("click", () =>
+          toggleMobileMenu(mobileMenu, iconWrapper)
+        );
+      }
     }
   }
-}
-class HeaderType2 extends HTMLElement {
-  async connectedCallback() {
-    const data = await fetchData();
-    if (!data) return;
-    const menuHTML = data.menu.items
-      .map(
-        (item) =>
-          `<li class="menu-item"><a class="transition-colors">${item}</a></li>`
-      )
-      .join("");
-    const menuMobileHTML = data.menu.items
-      .map(
-        (item) =>
-          `<li class="menu-mobile-item"><a class="transition-colors">${item}</a></li>`
-      )
-      .join("");
+  class HeaderType2 extends HTMLElement {
+    async connectedCallback() {
+      const data = await headerData;
+      if (!data) return;
+      const menuHTML = data.menu.items
+        .map(
+          (item) =>
+            `<li class="menu-item"><a class="transition-colors">${item}</a></li>`
+        )
+        .join("");
+      const menuMobileHTML = data.menu.items
+        .map(
+          (item) =>
+            `<li class="menu-mobile-item"><a class="transition-colors">${item}</a></li>`
+        )
+        .join("");
 
-    this.render(data.menu.title, menuHTML, menuMobileHTML);
-    this.setLinks(data.menu.links);
-    this.setMobileLinks(data.menu.links);
-    this.setupMobileToggle();
-  }
-  render(title, menuHTML, menuMobileHTML) {
-    this.innerHTML = `
-      <nav class="menu-background bg-slate-900 text-white fixed top-0 left-0 w-full z-50 shadow">
+      this.render(data.menu.title, menuHTML, menuMobileHTML);
+      this.setLinks(data.menu.links);
+      this.setMobileLinks(data.menu.links);
+      this.setupMobileToggle();
+    }
+    render(title, menuHTML, menuMobileHTML) {
+      this.innerHTML = `
+      <nav class="menu-background bg-slate-100 text-slate-800 dark:bg-slate-700 dark:text-slate-100 fixed top-0 left-0 w-full z-50 shadow">
         <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
 
           <!-- Left: Hamburger + Logo -->
@@ -188,42 +186,43 @@ class HeaderType2 extends HTMLElement {
         </div>
 
         <!-- Sidebar Menu (Mobile) -->
-        <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-white text-gray-800 shadow-lg px-6 py-8 transform translate-x-full transition-transform duration-300 ease-in md:hidden z-50">
+        <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-100 shadow-lg px-6 py-8 transform translate-x-full transition-transform duration-300 ease-in md:hidden z-50">
           <ul class="flex flex-col gap-6 font-semibold text-base">
             ${menuMobileHTML}
           </ul>
         </div>
       </nav>
     `;
-  }
+    }
 
-  setLinks(links) {
-    const allLinks = this.querySelectorAll(".menu-item a");
-    allLinks.forEach((a, index) => {
-      a.setAttribute("href", links[index] || "#");
-    });
-  }
-  setMobileLinks(links) {
-    const allLinks = this.querySelectorAll(".menu-mobile-item a");
-    allLinks.forEach((a, index) => {
-      a.setAttribute("href", links[index] || "#");
-    });
-  }
+    setLinks(links) {
+      const allLinks = this.querySelectorAll(".menu-item a");
+      allLinks.forEach((a, index) => {
+        a.setAttribute("href", links[index] || "#");
+      });
+    }
+    setMobileLinks(links) {
+      const allLinks = this.querySelectorAll(".menu-mobile-item a");
+      allLinks.forEach((a, index) => {
+        a.setAttribute("href", links[index] || "#");
+      });
+    }
 
-  setupMobileToggle() {
-    const hamburgerBtn = this.querySelector("#hamburger-btn");
-    const mobileMenu = this.querySelector("#mobile-menu");
-    const iconWrapper = hamburgerBtn;
+    setupMobileToggle() {
+      const hamburgerBtn = this.querySelector("#hamburger-btn");
+      const mobileMenu = this.querySelector("#mobile-menu");
+      const iconWrapper = hamburgerBtn;
 
-    if (hamburgerBtn && mobileMenu && iconWrapper) {
-      iconWrapper.children[0].classList.add("opacity-100");
-      iconWrapper.children[1].classList.add("opacity-0");
+      if (hamburgerBtn && mobileMenu && iconWrapper) {
+        iconWrapper.children[0].classList.add("opacity-100");
+        iconWrapper.children[1].classList.add("opacity-0");
 
-      hamburgerBtn.addEventListener("click", () =>
-        toggleMobileMenu(mobileMenu, iconWrapper)
-      );
+        hamburgerBtn.addEventListener("click", () =>
+          toggleMobileMenu(mobileMenu, iconWrapper)
+        );
+      }
     }
   }
+  customElements.define("header-type-1", HeaderType1);
+  customElements.define("header-type-2", HeaderType2);
 }
-customElements.define("header-type-1", HeaderType1);
-customElements.define("header-type-2", HeaderType2);
