@@ -37,8 +37,15 @@
         }
       },
       "socials": {
-        "socials_names": ["instagram", "telegram", "whatsapp" ,"YouTube"],
-        "socials_links": ["instagram.com", "", ""]
+        "socials_names": [
+          "instagram.com/kiyanmusic",
+          "x.com/kiyan_abbasi",
+          "t.me/KiyanAbbasi_dev",
+          "linkedin.com/in/kiyan-abbasi",
+          "whatsapp",
+          "YouTube",
+          "facebook"
+        ]
       }
     }
   }
