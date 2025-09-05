@@ -69,7 +69,7 @@ body {
   @apply w-full h-30 block leading-6 absolute right-0 left-0 bottom-0 rounded-b-xl bg-linear-to-b from-slate-700/30 to-slate-950;
 }
 #show-more__button {
-  @apply max-w-30 mx-auto p-3 rounded-2xl  bg-slate-900 text-slate-100 dark:bg-slate-100 dark:text-slate-900 hover:dark:bg-slate-300 hover:bg-slate-950 transition-all cursor-pointer absolute -bottom-5 right-0 left-0;
+  @apply max-w-30 mx-auto p-3 rounded-2xl  bg-slate-500/80 text-slate-100 dark:bg-slate-100 dark:text-slate-900 hover:dark:bg-slate-300  transition-all cursor-pointer absolute -bottom-5 right-0 left-0;
 }
 /* modifier */
 #show-more.active {
@@ -80,7 +80,7 @@ body {
     display: none;
   }
   #show-more__button {
-    @apply border border-slate-900 text-slate-900 dark:text-slate-100 dark:border-slate-100 bg-transparent -bottom-5;
+    @apply bg-white/80  text-slate-900 dark:text-slate-800 dark:border-slate-100 -bottom-5;
   }
 }
 
