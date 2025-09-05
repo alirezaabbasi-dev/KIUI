@@ -64,33 +64,59 @@ You can either clone this repo or copy the following files into your project:
 <body>
   <header>
     <!--! To use one of the components below, uncomment only one  -->
+
     <header-type-1></header-type-1>
     <!-- <header-type-2></header-type-2> -->
+
   </header>
+
   <main class="container">
     <!-- Type Writer -->
-    <div "">
+    <div>
       <h2 id="KIUI-typewriter"></h2>
     </div>
+
+    <!-- Show More Component -->
+    <div id="show-more">
+
+      <div id="show-more__content">
+        Lorem ipsum dolor sit amet ...
+      </div>
+
+      <div id="show-more__shadow">
+      </div>
+      <button id="show-more__button">Show More</button>
+
+    </div>
+    <!-- Show More Component -->
+
     <div id="cards-wrapper">
       <!-- Boxes -->
       <box-card-1 data-title="just title">
       </box-card-1>
+
       <box-card-1 data-img="./kiui.png" data-title="title2" data-price="23">
       </box-card-1>
+
       <box-card-1 data-img="./kiui.png" data-button-title="Buy" data-title="title3" data-description="description"
         data-price="12"></box-card-1>
+
       <box-card-1 data-img="./kiui.png" data-title="title4" data-description="description" data-button-title="button"
         data-button-link="#itsLink"></box-card-1>
       <!-- Boxes -->
     </div>
+
   </main>
+
   <footer>
     <!--* To use one of the components below, uncomment only one  -->
+
     <footer-type-1></footer-type-1>
     <!-- <footer-type-2></footer-type-2> -->
     <!-- <footer-type-3></footer-type-3> -->
+
   </footer>
+
   <script src="./kiui.min.js"></script>
   <!-- Use KIUI Type Writer -->
   <script src="./kiui.typewriter.min.js"></script>
@@ -110,7 +136,6 @@ You can either clone this repo or copy the following files into your project:
 </body>
 
 </html>
-
 ```
 
 ---
@@ -132,8 +157,7 @@ Change menu items, links, and footer content by editing `data.json`:
         "https://github.com/alirezaabbasi-dev/KIUI"
       ]
     },
-    "main":{
-    },
+    "main": {},
     "footer": {
       "title": "KIUI",
       "description": "KIUI is a modern UI design system to build fast and responsive web interfaces.",
@@ -158,10 +182,22 @@ Change menu items, links, and footer content by editing `data.json`:
           ],
           "links": ["#Privacy", "#Terms", "#Cookie", "#Licenses"]
         }
+      },
+      "socials": {
+        "socials_names": [
+          "instagram.com/kiyanmusic",
+          "x.com/kiyan_abbasi",
+          "t.me/KiyanAbbasi_dev",
+          "linkedin.com/in/kiyan-abbasi",
+          "whatsapp",
+          "YouTube",
+          "facebook"
+        ]
       }
     }
   }
 }
+
 
 ```
 
