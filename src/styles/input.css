@@ -108,3 +108,20 @@ body {
     @apply grid-cols-1;
   }
 }
+
+/* ripple effect */
+.ripple-effect {
+  position: absolute;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: scale(0);
+  animation: ripple 300ms linear;
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
