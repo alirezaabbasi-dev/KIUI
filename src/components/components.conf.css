@@ -45,9 +45,9 @@ body {
 
 /* Styles code  */
 /* ============================== Header ============================== */
-body {
-  background-color: #e0e0e0;
-}
+/* body {
+
+} */
 /* .menu-background {
   background: #4e2094;
 }
@@ -119,15 +119,24 @@ color: rgb(105, 224, 105);
   color: rgb(199, 199, 199);
 }
 .footer-bottom-social {
-  color: rgb(215, 146, 240);
+  color: rgb(186, 114, 212);
 } */
-
+.footer-icon {
+}
 /* Type Writer */
-#KIUI-typewriter {
+/* #KIUI-typewriter {
   color: rgb(68, 68, 68);
   margin: 4rem;
   margin-inline: auto;
   font-size: 2rem;
   text-align: center;
   height: 4rem;
+} */
+/* #show-more{
 }
+ #show-more__content{
+}
+ #show-more__shadow{
+}
+#show-more__button{
+}  */
