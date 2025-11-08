@@ -1,17 +1,15 @@
-
-
 (async () => {
-  const navMenus = await fetch("./src/allData/header.json")
+  const navMenus = await fetch("./allData/header.json")
     .then((res) => res.json())
     .then((data) => data);
 
   initHeader(navMenus);
 
-  const footerData = await fetch("./src/allData/footer.json")
+  const footerData = await fetch("./allData/footer.json")
     .then((res) => res.json())
     .then((data) => data);
 
-  const socials = await fetch("./src/allData/socials.json")
+  const socials = await fetch("./allData/socials.json")
     .then((res) => res.json())
     .then((data) => data);
 
