@@ -1,0 +1,12 @@
+{
+  "menu": {
+    "title": ["KIUI"],
+    "items": ["Home", "Docs", "contact", "GitHub"],
+    "links": [
+      "#Home",
+      "https://github.com/alirezaabbasi-dev/KIUI?tab=readme-ov-file#-kiui-kit",
+      "#contact",
+      "https://github.com/alirezaabbasi-dev/KIUI"
+    ]
+  }
+}

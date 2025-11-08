@@ -1,0 +1,28 @@
+{
+  "footer": {
+    "title": "KIUI",
+    "description": "KIUI is a modern UI design system to build fast and responsive web interfaces.",
+    "footerItems": {
+      "item1": {
+        "title": "Company",
+        "items": ["About", "Contact Us", "Careers", "Blog", "Contact"],
+        "links": ["#About", "#Us", "#Careers", "#Blog", "#Contact"]
+      },
+      "item2": {
+        "title": "Support",
+        "items": ["Help Center", "Documentation", "API Reference", "Status"],
+        "links": ["#Help", "#Documentation", "#API", "#Status"]
+      },
+      "item3": {
+        "title": "Legal",
+        "items": [
+          "Privacy Policy",
+          "Terms of Service",
+          "Cookie Policy",
+          "Licenses"
+        ],
+        "links": ["#Privacy", "#Terms", "#Cookie", "#Licenses"]
+      }
+    }
+  }
+}
