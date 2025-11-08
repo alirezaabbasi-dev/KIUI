@@ -4,7 +4,7 @@ export default function initFooter(footerData) {
       const data = await footerData;
       if (!data) return;
       this.logoRender = logoRender.bind(this);
-      this.render(data.footer);
+      this.render(data);
     }
 
     render(footer) {
@@ -98,7 +98,7 @@ export default function initFooter(footerData) {
       const data = await footerData;
       if (!data) return;
       this.logoRender = logoRender.bind(this);
-      this.render(data.footer);
+      this.render(data);
     }
 
     render(footer) {
@@ -182,7 +182,7 @@ export default function initFooter(footerData) {
       const data = await footerData;
       if (!data) return;
       this.logoRender = logoRender.bind(this);
-      this.render(data.footer);
+      this.render(data);
     }
 
     render({ title, description, footerItems, socials }) {
@@ -253,7 +253,7 @@ export default function initFooter(footerData) {
               ${item3.items
                 .map(
                   (item, i) =>
-                    `<li class="footer-item hover:underline"><a href=${item3.links[i]}>${item}</a></li>`
+                    `<li class="footer-item w-fit"><a class="hover:underline" href=${item3.links[i]}>${item}</a></li>`
                 )
                 .join("")}
             </ul>
