@@ -305,3 +305,4 @@ export default function initFooter(footerData) {
   customElements.define("footer-type-2", FooterType2);
   customElements.define("footer-type-3", FooterType3);
 }
+// TODO : refactor --> remove tailwind classes from this file and add to input.css

@@ -1,11 +1,5 @@
 export default function initHeader(headerData) {
-  const $ = document;
 
-  /**
-   * Toggles mobile menu and icon state with fade effect
-   * @param {HTMLElement} menuElement
-   * @param {HTMLElement} iconWrapper
-   */
   function toggleMobileMenu(menuElement, iconWrapper) {
     const isOpen = menuElement.classList.contains("open");
 
@@ -226,3 +220,4 @@ export default function initHeader(headerData) {
   customElements.define("header-type-1", HeaderType1);
   customElements.define("header-type-2", HeaderType2);
 }
+// TODO : refactor --> remove tailwind classes from this file and add to input.css

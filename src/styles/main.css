@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+body {
+  @apply bg-slate-300 dark:bg-slate-800;
+}
+@layer utilities {
+  .container {
+    @apply mx-auto my-24 p-2;
+  }
+}
+body {
+  @apply bg-[#d6d6d6] dark:bg-slate-800;
+}
+/* components */
+/* menu */
+.menu-btn {
+  margin: 0.7rem 0.2rem;
+  cursor: pointer;
+}
+.menu-btn,
+.menu-btn::after,
+.menu-btn::before {
+  content: "";
+  background: #000;
+  width: 2rem;
+  height: 0.15rem;
+  border-radius: 1rem;
+  position: relative;
+}
+.menu-btn::after {
+  position: absolute;
+  bottom: 0.5rem;
+}
+.menu-btn::before {
+  position: absolute;
+  top: 0.5rem;
+}
+/* Main */
+#cards-wrapper {
+  @apply grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-3.5;
+}
+/* modifier */
+.menu-btn--show {
+  left: 50%;
+}
+
+/* Effects */
+#KIUI-typewriter {
+  @apply text-slate-700 dark:text-slate-200 h-4 m-4 mx-auto text-3xl text-center;
+}
+#KIUI-typewriter::after {
+  content: "|";
+  display: inline-block;
+  background: inherit;
+  animation: typeWriterFlicker 1.5s infinite linear;
+}
+.footer-icon {
+  @apply w-5;
+}
+/*! Show More */
+#show-more {
+  @apply w-full relative p-6 pb-12 my-50 rounded-xl bg-slate-600;
+}
+
+#show-more__content {
+  @apply w-full h-49 overflow-hidden text-justify text-slate-900 dark:text-slate-100;
+}
+#show-more__shadow {
+  @apply w-full h-30 block leading-6 absolute right-0 left-0 bottom-0 rounded-b-xl bg-linear-to-b from-slate-700/30 to-slate-950;
+}
+#show-more__button {
+  @apply max-w-30 mx-auto p-3 rounded-2xl  bg-slate-500/80 text-slate-100 dark:bg-slate-100 dark:text-slate-900 hover:dark:bg-slate-300  transition-all cursor-pointer absolute -bottom-5 right-0 left-0;
+}
+/* modifier */
+#show-more.active {
+  #show-more__content {
+    @apply !h-full overflow-auto;
+  }
+  #show-more__shadow {
+    display: none;
+  }
+  #show-more__button {
+    @apply bg-white/80  text-slate-900 dark:text-slate-800 dark:border-slate-100 -bottom-5;
+  }
+}
+
+@keyframes typeWriterFlicker {
+  0% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 0.1;
+    transform: scaleY(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+/* Svg */
+.social-media a svg {
+  @apply size-8 duration-200;
+}
+/* media queries */
+@media screen and (max-width: 480px) {
+  #cards-wrapper {
+    @apply grid-cols-1;
+  }
+}
