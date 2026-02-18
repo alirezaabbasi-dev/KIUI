@@ -281,7 +281,7 @@ cd KIUI
 
 npm install
 
-npm run dev:css
+npm run dev
 ```
 
 ---
