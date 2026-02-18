@@ -96,21 +96,16 @@
     <!--! Other Scripts ... -->
     <script>
       // ? InitProject
-
       (async () => {
-        const navMenus = await fetch("/allData/header.json")
-          .then((res) => res.json())
-          .then((data) => data);
+        const navMenusDataRes = await fetch("/allData/header.json");
+        const navMenusData = await navMenusDataRes.json();
+        initHeader(navMenusData);
 
-        initHeader(navMenus);
+        const footerDataRes = await fetch("/allData/footer.json");
+        const footerData = await footerDataRes.json();
 
-        const footerData = await fetch("/allData/footer.json")
-          .then((res) => res.json())
-          .then((data) => data);
-
-        const socialsData = await fetch("/allData/socials.json")
-          .then((res) => res.json())
-          .then((data) => data);
+        const socialsDataRes = await fetch("/allData/socials.json");
+        const socialsData = await socialsDataRes.json();
 
         const footer = { ...footerData.footer, socials: socialsData.socials };
         initFooter(footer);
