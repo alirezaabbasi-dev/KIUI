@@ -9,7 +9,7 @@ body {
   }
 }
 body {
-  @apply bg-[#d6d6d6] dark:bg-slate-800;
+  @apply bg-[#d6d6d6] dark:bg-black;
 }
 /* components */
 /* menu */
@@ -59,14 +59,14 @@ body {
 }
 /*! Show More */
 #show-more {
-  @apply w-full relative p-6 pb-12 my-50 rounded-xl bg-slate-600;
+  @apply w-full relative p-6 pb-12 my-50 rounded-xl bg-gray-100 dark:bg-gray-900;
 }
 
 #show-more__content {
-  @apply w-full h-49 overflow-hidden text-justify text-slate-900 dark:text-slate-100;
+  @apply w-full h-49 overflow-hidden text-justify text-slate-900 dark:text-gray-100;
 }
 #show-more__shadow {
-  @apply w-full h-30 block leading-6 absolute right-0 left-0 bottom-0 rounded-b-xl bg-linear-to-b from-slate-700/30 to-slate-950;
+  @apply w-full h-30 block leading-6 absolute right-0 left-0 bottom-0 rounded-b-xl bg-linear-to-b dark:bg-linear-to-b dark:from-gray-900/20 to-gray-600/50;
 }
 #show-more__button {
   @apply max-w-30 mx-auto p-3 rounded-2xl  bg-slate-500/80 text-slate-100 dark:bg-slate-100 dark:text-slate-900 hover:dark:bg-slate-300  transition-all cursor-pointer absolute -bottom-5 right-0 left-0;

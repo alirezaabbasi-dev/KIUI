@@ -3,12 +3,13 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [tailwindcss()],
-
   build: {
-    lib: {
-      entry: ["src/index.js"],
-      fileName: (format, entryName) => `${entryName}.${format}.js`,
-      cssFileName: "my-lib-style",
+    rollupOptions: {
+      output: {
+        entryFileNames: "assets/[name].js",
+        chunkFileNames: "assets/[name].js",
+        assetFileNames: "assets/[name].[ext]",
+      },
     },
   },
 });

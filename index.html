@@ -15,7 +15,7 @@
 
       <header-type-1></header-type-1>
 
-      <!-- <header-type-2></header-type-2> -->
+      <header-type-2></header-type-2>
 
       <!--! To use one of the components below, uncomment only one  -->
     </header>
@@ -56,13 +56,13 @@
         <box-card-1 data-title="just title"></box-card-1>
 
         <box-card-1
-          data-img="./kiui.png"
+          data-img="/kiui.png"
           data-title="title2"
           data-price="23"
         ></box-card-1>
 
         <box-card-1
-          data-img="./kiui.png"
+          data-img="/kiui.png"
           data-button-title="Buy"
           data-title="title3"
           data-description="description"
@@ -70,7 +70,7 @@
         ></box-card-1>
 
         <box-card-1
-          data-img="./kiui.png"
+          data-img="/kiui.png"
           data-title="title4"
           data-description="description"
           data-button-title="button"
@@ -94,46 +94,28 @@
 
     <!--* Scripts -->
     <script type="module" src="/src/index.js"></script>
-
-    <!--! Use KIUI Type Writer -->
-    <script src="/src/effects/typewriter.js"></script>
-    <script>
-      initKIUITypeWriter(
-        [
-          "Welcome to KIUI",
-          "A lightweight",
-          "and",
-          "Modern Web Component UI Kit.",
-          "Let’s build something amazing together . . . ",
-        ],
-        100, // typing/deleting speed
-        1000, // pause between type/delete
-      );
-    </script>
-
     <!--! Other Scripts ... -->
-    <!-- <script>
+    <script>
       // ? InitProject
 
       (async () => {
-        const navMenus = await fetch("./src/allData/header.json")
+        const navMenus = await fetch("/allData/header.json")
           .then((res) => res.json())
           .then((data) => data);
 
         initHeader(navMenus);
 
-        const footerData = await fetch("./src/allData/footer.json")
+        const footerData = await fetch("/allData/footer.json")
           .then((res) => res.json())
           .then((data) => data);
 
-        const socials = await fetch("./src/allData/socials.json")
+        const socialsData = await fetch("/allData/socials.json")
           .then((res) => res.json())
           .then((data) => data);
 
-        const footer = { ...footerData.footer, socials: socials.socials };
-
+        const footer = { ...footerData.footer, socials: socialsData.socials };
         initFooter(footer);
       })();
-    </script> -->
+    </script>
   </body>
 </html>
