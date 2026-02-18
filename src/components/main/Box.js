@@ -8,7 +8,7 @@ class BoxCard1 extends HTMLElement {
   render(img, title, description, price, buttonTitle, buttonLink) {
     this.innerHTML = `
       <!-- Product Card -->
-      <div class="card w-full bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
+      <div class="card w-full bg-gray-200 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
         <img class="w-full h-60 object-cover" src="${
           img || "./kiui.png"
         }" alt="${title || "default alt"}" />
@@ -30,12 +30,12 @@ class BoxCard1 extends HTMLElement {
               ? `<div class="flex items-center justify-between mt-4">
                   ${
                     price
-                      ? `<span class="card-price text-lg font-bold text-slate-600 dark:text-indigo-400">$${price}</span>`
+                      ? `<span class="card-price text-lg font-bold text-gray-600 dark:text-indigo-400">$${price}</span>`
                       : "<div></div>"
                   }
                   ${
                     buttonTitle
-                      ? `<a href="${buttonLink}" target="_blank" rel="noopener noreferrer" class="card-btn px-4 py-2 bg-slate-600 text-white rounded-xl hover:bg-slate-800 cursor-pointer transition">${buttonTitle}</a>`
+                      ? `<a href="${buttonLink}" target="_blank" rel="noopener noreferrer" class="card-btn px-4 py-2 bg-gray-600 text-white rounded-xl hover:bg-gray-700 cursor-pointer transition">${buttonTitle}</a>`
                       : ""
                   }
                 </div>`

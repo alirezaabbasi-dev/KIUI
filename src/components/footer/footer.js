@@ -20,7 +20,7 @@ export default function initFooter(footerData) {
             .join("")
         : "";
       this.innerHTML = `
-    <div class="footer bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 pt-10">
+    <div class="footer bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-300 pt-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Top  -->
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-gray-300 dark:border-gray-700">
@@ -114,10 +114,10 @@ export default function initFooter(footerData) {
             .join("")
         : "";
       this.innerHTML = `
-    <div class="footer bg-gray-900 text-gray-200 py-12">
+    <div class="footer bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-200 py-12">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-10">
-          <h2 class="footer-title text-3xl font-extrabold text-white">${
+          <h2 class="footer-title text-3xl font-extrabold dark:text-white text-gray-950">${
             footer.title
           }</h2>
           <p class="footer-description mt-2 text-sm text-gray-400">${
@@ -130,7 +130,7 @@ export default function initFooter(footerData) {
           <input
             type="email"
             placeholder="Enter your email"
-            class="input-email w-full sm:w-80 px-4 py-2 rounded-md text-slate-300 outline-1 focus:outline-blue-600"
+            class="input-email w-full sm:w-80 px-4 py-2 rounded-md text-gray-800 dark:text-gray-300 outline-1 focus:outline-blue-600"
           />
           <button
             class="footer-btn-subscribe bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-md transition duration-200"
@@ -201,7 +201,7 @@ export default function initFooter(footerData) {
         : "";
 
       this.innerHTML = `
-    <footer class="footer bg-[#0b1d26] text-white py-16 text-sm">
+    <footer class="footer  bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 py-16 text-sm">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between lg:flex-row flex-col space-y-4 lg:space-y-0">
 
         <div class="flex-2/4 flex flex-col justify-between space-y-6">
@@ -213,13 +213,13 @@ export default function initFooter(footerData) {
             </div>
           </div>
 
-          <p class="text-gray-400 copyright">Copyright ${new Date().getFullYear()} ${title}, Inc. Terms & Privacy</p>
+          <p class="text-gray-600 dark:text-gray-400 copyright">Copyright ${new Date().getFullYear()} ${title}, Inc. Terms & Privacy</p>
 
         </div>
 
         <div class="flex-1/4 flex justify-between flex-col sm:flex-row gap-4">
           <div>
-            <h3 class="footer-item-title text-lg footer-title text-amber-200 font-bold">More on The ${
+            <h3 class="footer-item-title text-lg footer-title text-gray-400 font-bold">More on The ${
               item1.title
             }</h3>
             <ul class="space-y-3 mt-4">
@@ -233,7 +233,7 @@ export default function initFooter(footerData) {
           </div>
 
           <div>
-            <h3 class="footer-item-title text-lg footer-title text-amber-200 font-bold">More on The ${
+            <h3 class="footer-item-title text-lg footer-title text-gray-400 font-bold">More on The ${
               item2.title
             }</h3>
             <ul class="space-y-3 mt-4">
@@ -246,7 +246,7 @@ export default function initFooter(footerData) {
             </ul>
           </div>
           <div>
-            <h3 class="footer-item-title text-lg footer-title text-amber-200 font-bold">More on The ${
+            <h3 class="footer-item-title text-lg footer-title text-gray-400 font-bold">More on The ${
               item3.title
             }</h3>
             <ul class="space-y-3 mt-4">

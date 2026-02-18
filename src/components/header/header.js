@@ -53,7 +53,7 @@ export default function initHeader(headerData) {
 
     render(title, menuHTML, menuMobileHTML) {
       this.innerHTML = `
-      <nav class="menu-background bg-slate-100 dark:bg-slate-600 shadow-md fixed w-full top-0 left-0 z-50">
+      <nav class="menu-background bg-gray-100 dark:bg-gray-900 shadow-md fixed w-full top-0 left-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
 
           <!-- Logo -->
@@ -64,11 +64,11 @@ export default function initHeader(headerData) {
           <!-- Hamburger Button (Mobile) -->
           <div class="md:hidden">
             <button id="hamburger-btn" class="relative w-6 h-6">
-              <svg class="absolute inset-0 w-6 h-6 transition-opacity duration-300 opacity-100 hamburger-icon" fill="none" stroke="currentColor" stroke-width="2"
+              <svg class="absolute dark:text-gray-100 inset-0 w-6 h-6 transition-opacity duration-300 opacity-100 hamburger-icon" fill="none" stroke="currentColor" stroke-width="2"
                    viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
               </svg>
-              <svg class="absolute inset-0 w-6 h-6 transition-opacity duration-300 opacity-0 close-icon" fill="none" stroke="currentColor" stroke-width="2"
+              <svg class="absolute text-gray-100 inset-0 w-6 h-6 transition-opacity duration-300 opacity-0 close-icon" fill="none" stroke="currentColor" stroke-width="2"
                    viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
               </svg>
@@ -82,8 +82,8 @@ export default function initHeader(headerData) {
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden hidden fixed top-16 right-0 w-2/3 h-full bg-white shadow-lg px-6 py-4 flex-col gap-4 m-auto text-center">
-          <ul class="flex flex-col gap-4 text-gray-800 font-semibold">
+        <div id="mobile-menu" class="md:hidden hidden fixed top-16 right-0 w-2/3 h-full bg-gray-200 text-gray-800 dark:bg-gray-800 dark:text-gray-100 shadow-lg px-6 py-4 flex-col gap-4 m-auto text-center">
+          <ul class="flex flex-col gap-4 font-semibold">
             ${menuMobileHTML}
           </ul>
         </div>
@@ -144,7 +144,7 @@ export default function initHeader(headerData) {
     }
     render(title, menuHTML, menuMobileHTML) {
       this.innerHTML = `
-      <nav class="menu-background bg-slate-100 text-slate-800 dark:bg-slate-700 dark:text-slate-100 fixed top-0 left-0 w-full z-50 shadow">
+      <nav class="menu-background bg-gray-200 text-slate-800 dark:bg-gray-900 dark:text-slate-100 fixed top-0 left-0 w-full z-50 shadow">
         <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
 
           <!-- Left: Hamburger + Logo -->
@@ -170,7 +170,7 @@ export default function initHeader(headerData) {
           <!-- Right Icons -->
           <div class="hidden md:flex items-center gap-4">
             <button title="Search">
-              <svg class="w-5 h-5 text-white hover:text-indigo-400 transition" fill="none" stroke="currentColor" stroke-width="2"
+              <svg class="w-5 h-5 text-black dark:text-white hover:text-indigo-400 transition" fill="none" stroke="currentColor" stroke-width="2"
                    viewBox="0 0 24 24">
                 <circle cx="11" cy="11" r="8" />
                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
