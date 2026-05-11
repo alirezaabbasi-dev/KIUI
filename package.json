@@ -1,6 +1,6 @@
 {
   "name": "kiui-kit",
-  "version": "1.4.1-beta.1",
+  "version": "1.5.0",
   "description": "A set of ready-to-use HTML components like headers, footers, cards, etc.",
   "main": "dist/assets/index.js",
   "style": "dist/kiui.min.css",
