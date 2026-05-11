@@ -108,21 +108,21 @@
         <div>
           <h3 class="text-lg font-semibold mb-4 footer-item-title">${e.footerItems.item1.title}</h3>
           <ul class="space-y-2 text-sm">
-          ${e.footerItems.item1.items.map((l,c)=>`<li><a href="${e.footerItems.item1.links[c]}" class="footer-item hover:underline">${l}</a></li>`).join("")}
+          ${e.footerItems.item1.items.map((l,d)=>`<li><a href="${e.footerItems.item1.links[d]}" class="footer-item hover:underline">${l}</a></li>`).join("")}
           </ul>
         </div>
 
         <div>
           <h3 class="text-lg font-semibold mb-4 footer-item-title">${e.footerItems.item2.title}</h3>
           <ul class="space-y-2 text-sm">
-          ${e.footerItems.item2.items.map((l,c)=>`<li><a href="${e.footerItems.item2.links[c]}" class="footer-item hover:underline">${l}</a></li>`).join("")}
+          ${e.footerItems.item2.items.map((l,d)=>`<li><a href="${e.footerItems.item2.links[d]}" class="footer-item hover:underline">${l}</a></li>`).join("")}
           </ul>
         </div>
 
         <div>
           <h3 class="text-lg font-semibold mb-4 footer-item-title">${e.footerItems.item3.title}</h3>
           <ul class="space-y-2 text-sm">
-          ${e.footerItems.item3.items.map((l,c)=>`<li><a href="${e.footerItems.item3.links[c]}" class="footer-item hover:underline">${l}</a></li>`).join("")}
+          ${e.footerItems.item3.items.map((l,d)=>`<li><a href="${e.footerItems.item3.links[d]}" class="footer-item hover:underline">${l}</a></li>`).join("")}
           </ul>
         </div>
       </div>
@@ -164,7 +164,7 @@
             <div>
               <h3 class="text-lg font-semibold mb-4 footer-item-title">${l.title}</h3>
               <ul class="space-y-2 text-sm">
-                ${l.items.map((c,m)=>`<li class="footer-item"><a href="${l.links[m]}" class="hover:underline">${c}</a></li>`).join("")}
+                ${l.items.map((d,h)=>`<li class="footer-item"><a href="${l.links[h]}" class="hover:underline">${d}</a></li>`).join("")}
               </ul>
             </div>
           `).join("")}
@@ -179,7 +179,7 @@
         </div>
       </div>
     </div>
-    `}}class o extends HTMLElement{async connectedCallback(){const e=await n;e&&(this.logoRender=s.bind(this),this.render(e))}render({title:e,description:i,footerItems:l,socials:c}){const{item1:m,item2:h,item3:g}=l,v=c.socials_names?c.socials_names.map(d=>{if(this.logoRender(d))return`<a href="https://${d}" target="_blank">${this.logoRender(d)}</a>`}).join(""):"";this.innerHTML=`
+    `}}class o extends HTMLElement{async connectedCallback(){const e=await n;e&&(this.logoRender=s.bind(this),this.render(e))}render({title:e,description:i,footerItems:l,socials:d}){const{item1:h,item2:g,item3:u}=l,v=d.socials_names?d.socials_names.map(c=>{if(this.logoRender(c))return`<a href="https://${c}" target="_blank">${this.logoRender(c)}</a>`}).join(""):"";this.innerHTML=`
     <footer class="footer  bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 py-16 text-sm">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between lg:flex-row flex-col space-y-4 lg:space-y-0">
 
@@ -198,22 +198,28 @@
 
         <div class="flex-1/4 flex justify-between flex-col sm:flex-row gap-4">
           <div>
-            <h3 class="footer-item-title text-lg footer-title text-gray-400 font-bold">More on The ${m.title}</h3>
+            <h3 class="footer-item-title text-lg footer-title text-gray-400 font-bold">More on The ${h.title}</h3>
             <ul class="space-y-3 mt-4">
-              ${m.items.map((d,u)=>`<li class="footer-item hover:underline"><a href=${m.links[u]}>${d}</a></li>`).join("")}
+              ${h.items.map((c,m)=>`<li class="footer-item hover:underline"><a href=${h.links[m]}>${c}</a></li>`).join("")}
             </ul>
           </div>
 
           <div>
-            <h3 class="footer-item-title text-lg footer-title text-gray-400 font-bold">More on The ${h.title}</h3>
+            <h3 class="footer-item-title text-lg footer-title text-gray-400 font-bold">More on The ${g.title}</h3>
             <ul class="space-y-3 mt-4">
-              ${h.items.map((d,u)=>`<li class="footer-item hover:underline"><a href=${h.links[u]}>${d}</a></li>`).join("")}
+              ${g.items.map((c,m)=>`<li class="footer-item hover:underline hover:underline"><a href=${g.links[m]}>${c}</a></li>`).join("")}
             </ul>
           </div>
           <div>
-            <h3 class="footer-item-title text-lg footer-title text-gray-400 font-bold">More on The ${g.title}</h3>
+            <h3 class="footer-item-title text-lg footer-title text-gray-400 font-bold">More on The ${u.title}</h3>
             <ul class="space-y-3 mt-4">
-              ${g.items.map((d,u)=>`<li class="footer-item w-fit"><a class="hover:underline" href=${g.links[u]}>${d}</a></li>`).join("")}
+              ${u.items.map((c,m)=>`<li class="footer-item w-fit"><a class="hover:underline" href=${u.links[m]}>${c}</a></li>`).join("")}
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-item-title text-lg footer-title text-amber-200 font-bold">More on The ${u.title}</h3>
+            <ul class="space-y-3 mt-4">
+              ${u.items.map((c,m)=>`<li class="footer-item hover:underline"><a href=${u.links[m]}>${c}</a></li>`).join("")}
             </ul>
           </div>
         </div>
@@ -233,4 +239,4 @@
                     <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
                     </svg>`;case e.includes("linkedin"):return`<svg xmlns="http://www.w3.org/2000/svg" class="footer-icon" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
                       <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
-                      </svg>`;default:return""}}customElements.define("footer-type-1",r),customElements.define("footer-type-2",a),customElements.define("footer-type-3",o)}const L=document.querySelector("#show-more"),p=document.querySelector("#show-more__button");p.addEventListener("click",()=>{p.textContent=p.textContent==="Show More"?"Show Less":"Show More",L.classList.toggle("active")});const $=document,f=$.querySelector("#KIUI-typewriter");let x=null,b=null;function M(n=[],r=100,a=1e3){let o=0,s=0;function t(){const i=n[o];x=setInterval(()=>{f.textContent+=i[s],s++,s>=i.length&&(clearInterval(x),setTimeout(()=>e(),a))},r)}function e(){const i=n[o];b=setInterval(()=>{s--,f.textContent=i.slice(0,s),s<=0&&(clearInterval(b),o=(o+1)%n.length,setTimeout(()=>t(),a))},r)}t()}window.initKIUITypeWriter=M;window.initHeader=y;window.initFooter=k;initKIUITypeWriter(["Welcome to KIUI","A lightweight","and","Modern Web Component UI Kit.","Let’s build something amazing together . . . "],100,1e3);
+                      </svg>`;default:return""}}customElements.define("footer-type-1",r),customElements.define("footer-type-2",a),customElements.define("footer-type-3",o)}const L=document.querySelector("#show-more"),p=document.querySelector("#show-more__button");p.addEventListener("click",()=>{p.textContent=p.textContent==="Show More"?"Show Less":"Show More",L.classList.toggle("active")});const $=document,f=$.querySelector("#KIUI-typewriter");let x=null,b=null;function M(n=[],r=100,a=1e3){let o=0,s=0;function t(){const i=n[o];x=setInterval(()=>{f.textContent+=i[s],s++,s>=i.length&&(clearInterval(x),setTimeout(()=>e(),a))},r)}function e(){const i=n[o];b=setInterval(()=>{s--,f.textContent=i.slice(0,s),s<=0&&(clearInterval(b),o=(o+1)%n.length,setTimeout(()=>t(),a))},r)}t()}window.initKIUITypeWriter=M;window.initHeader=y;window.initFooter=k;
