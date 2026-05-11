@@ -95,22 +95,5 @@
     <!--* Scripts -->
     <script type="module" src="/src/index.js"></script>
     <!--! Other Scripts ... -->
-    <script>
-      // ? InitProject
-      (async () => {
-        const navMenusDataRes = await fetch("/allData/header.json");
-        const navMenusData = await navMenusDataRes.json();
-        initHeader(navMenusData);
-
-        const footerDataRes = await fetch("/allData/footer.json");
-        const footerData = await footerDataRes.json();
-
-        const socialsDataRes = await fetch("/allData/socials.json");
-        const socialsData = await socialsDataRes.json();
-
-        const footer = { ...footerData.footer, socials: socialsData.socials };
-        initFooter(footer);
-      })();
-    </script>
   </body>
 </html>
