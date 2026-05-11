@@ -1,7 +1,8 @@
 # 🧩 KIUI Kit
----
-<img src="kiui.png">
 
+---
+
+<img src="kiui.png">
 
 A lightweight, modern Web Component UI Kit – ready to plug into your HTML projects.
 
@@ -16,18 +17,21 @@ A lightweight, modern Web Component UI Kit – ready to plug into your HTML proj
 | `kiui.min.js`         | Core JavaScript containing Web Components    |
 | `kiui.min.css`        | Main CSS for layout and design               |
 | `components.conf.css` | Theme/style config – customize colors easily |
-| `data.json`           | Dynamic content used by components           |
+| `allData/*.json`      | Dynamic content used by components           |
 | `index.html`          | Live demo file – test components quickly     |
 | `kiui.png`            | Default image/logo used in cards/headers     |
 | `kiui.typewriter.min` | Type writer Effect                           |
 
 ---
+
 ## 📦 Installation
 
 ```bash
 npm i kiui-kit
 ```
+
 ---
+
 ## 🚀 How to Use
 
 ### 1. Add Files to Your Project
@@ -40,7 +44,7 @@ You can either clone this repo or copy the following files into your project:
 ├── kiui.min.js
 ├── kiui.min.css
 ├── components.conf.css (optional)
-├── data.json
+├── /allData/*.json
 └── your.html
 ```
 
@@ -51,131 +55,237 @@ You can either clone this repo or copy the following files into your project:
 ```html
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KIUI Demo</title>
+    <link rel="shortcut icon" href="./kiui.png" type="image/png" />
+    <link rel="stylesheet" href="./src/styles/main.css" />
+    <link rel="stylesheet" href="./src/components/components.conf.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KIUI Demo</title>
-  <link rel="shortcut icon" href="./kiui.png" type="image/png">
-  <link rel="stylesheet" href="./kiui.min.css">
-  <link rel="stylesheet" href="./components.conf.css">
-</head>
+  <body>
+    <header>
+      <!--! To use one of the components below, uncomment only one  -->
 
-<body>
-  <header>
-    <!--! To use one of the components below, uncomment only one  -->
-    <header-type-1></header-type-1>
-    <!-- <header-type-2></header-type-2> -->
-  </header>
-  <main class="container">
-    <!-- Type Writer -->
-    <div>
-      <h2 id="KIUI-typewriter"></h2>
-    </div>
-    <div id="cards-wrapper">
-      <!-- Boxes -->
-      <box-card-1 data-title="just title">
-      </box-card-1>
-      <box-card-1 data-img="./kiui.png" data-title="title2" data-price="23">
-      </box-card-1>
-      <box-card-1 data-img="./kiui.png" data-button-title="Buy" data-title="title3" data-description="description"
-        data-price="12"></box-card-1>
-      <box-card-1 data-img="./kiui.png" data-title="title4" data-description="description" data-button-title="button"
-        data-button-link="#itsLink"></box-card-1>
-      <!-- Boxes -->
-    </div>
-  </main>
-  <footer>
-    <!--* To use one of the components below, uncomment only one  -->
-    <footer-type-1></footer-type-1>
-    <!-- <footer-type-2></footer-type-2> -->
-    <!-- <footer-type-3></footer-type-3> -->
-  </footer>
-  <script src="./kiui.min.js"></script>
-  <!-- Use KIUI Type Writer -->
-  <script src="./kiui.typewriter.min.js"></script>
-  <script>
-    initKIUITypeWriter(
-      [
-        "Welcome to KIUI",
-        "A lightweight",
-        "and",
-        "Modern Web Component UI Kit.",
-        "Let’s build something amazing together . . . ",
-      ],
-      100, // typing/deleting speed
-      1000 // pause between type/delete
-    );
-  </script>
-</body>
+      <header-type-1></header-type-1>
 
+      <!-- <header-type-2></header-type-2> -->
+
+      <!--! To use one of the components below, uncomment only one  -->
+    </header>
+
+    <main class="container">
+      <!--? Type Writer -->
+
+      <div>
+        <h2 id="KIUI-typewriter"></h2>
+      </div>
+
+      <!--? Type Writer -->
+
+      <!--* Show More Component -->
+
+      <div id="show-more">
+        <div id="show-more__content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. In pariatur
+          quasi minus a quaerat vitae laboriosam qui iste, est voluptatum
+          nesciunt maxime voluptate. Explicabo saepe exercitationem ratione
+          illum autem doloribus quis, alias quas possimus consectetur? Dolorem
+          temporibus non enim saepe exercitationem obcaecati, velit
+          necessitatibus accusamus voluptatem natus. Natus nemo perferendis
+          aspernatur et, similique earum! Adipisci omnis modi consequuntur eos
+          sint aspernatur rerum officiis alias commodi aliquid possimus
+          laudantium, blanditiis minima magni distinctio. Molestias ipsam enim
+          recusandae excepturi dignissimos praesentium placeat minus, deserunt
+        </div>
+
+        <div id="show-more__shadow"></div>
+        <button id="show-more__button">Show More</button>
+      </div>
+
+      <!--* Show More Component -->
+
+      <div id="cards-wrapper">
+        <!--? Boxes -->
+        <box-card-1 data-title="just title"></box-card-1>
+
+        <box-card-1
+          data-img="./kiui.png"
+          data-title="title2"
+          data-price="23"
+        ></box-card-1>
+
+        <box-card-1
+          data-img="./kiui.png"
+          data-button-title="Buy"
+          data-title="title3"
+          data-description="description"
+          data-price="12"
+        ></box-card-1>
+
+        <box-card-1
+          data-img="./kiui.png"
+          data-title="title4"
+          data-description="description"
+          data-button-title="button"
+          data-button-link="#itsLink"
+        ></box-card-1>
+        <!--? Boxes -->
+      </div>
+    </main>
+
+    <footer>
+      <!--* To use one of the components below, uncomment only one  -->
+
+      <footer-type-1></footer-type-1>
+
+      <!-- <footer-type-2></footer-type-2> -->
+
+      <!-- <footer-type-3></footer-type-3> -->
+
+      <!--* To use one of the components below, uncomment only one  -->
+    </footer>
+
+    <!--* Scripts -->
+    <script type="module" src="./index.js"></script>
+
+    <!--! Use KIUI Type Writer -->
+    <script src="./src/effects/typewriter.js"></script>
+    <script>
+      initKIUITypeWriter(
+        [
+          "Welcome to KIUI",
+          "A lightweight",
+          "and",
+          "Modern Web Component UI Kit.",
+          "Let’s build something amazing together . . . ",
+        ],
+        100, // typing/deleting speed
+        1000 // pause between type/delete
+      );
+    </script>
+
+    <!--! Other Scripts ... -->
+    <script>
+      // ? InitProject
+
+      (async () => {
+        const navMenus = await fetch("./src/allData/header.json")
+          .then((res) => res.json())
+          .then((data) => data);
+
+        initHeader(navMenus);
+
+        const footerData = await fetch("./src/allData/footer.json")
+          .then((res) => res.json())
+          .then((data) => data);
+
+        const socials = await fetch("./src/allData/socials.json")
+          .then((res) => res.json())
+          .then((data) => data);
+
+        const footer = { ...footerData.footer, socials: socials.socials };
+
+        initFooter(footer);
+      })();
+    </script>
+  </body>
 </html>
-
 ```
 
 ---
 
-### 3. Customize with `data.json`
+### 3. Customize with `*.json`
 
-Change menu items, links, and footer content by editing `data.json`:
+Change menu items, links, and footer content by editing **these:**
+
+`header.json`:
 
 ```json
 {
-  "data": {
-    "menu": {
-      "title": ["KIUI"],
-      "items": ["Home", "Docs", "contact", "GitHub"],
-      "links": [
-        "#Home",
-        "https://github.com/alirezaabbasi-dev/KIUI?tab=readme-ov-file#-kiui-kit",
-        "#contact",
-        "https://github.com/alirezaabbasi-dev/KIUI"
-      ]
-    },
-    "main":{
-    },
-    "footer": {
-      "title": "KIUI",
-      "description": "KIUI is a modern UI design system to build fast and responsive web interfaces.",
-      "footerItems": {
-        "item1": {
-          "title": "Company",
-          "items": ["About", "Contact Us", "Careers", "Blog", "Contact"],
-          "links": ["#About", "#Us", "#Careers", "#Blog", "#Contact"]
-        },
-        "item2": {
-          "title": "Support",
-          "items": ["Help Center", "Documentation", "API Reference", "Status"],
-          "links": ["#Help", "#Documentation", "#API", "#Status"]
-        },
-        "item3": {
-          "title": "Legal",
-          "items": [
-            "Privacy Policy",
-            "Terms of Service",
-            "Cookie Policy",
-            "Licenses"
-          ],
-          "links": ["#Privacy", "#Terms", "#Cookie", "#Licenses"]
-        }
+  "menu": {
+    "title": ["KIUI"],
+    "items": ["Home", "Docs", "contact", "GitHub"],
+    "links": [
+      "#Home",
+      "https://github.com/alirezaabbasi-dev/KIUI?tab=readme-ov-file#-kiui-kit",
+      "#contact",
+      "https://github.com/alirezaabbasi-dev/KIUI"
+    ]
+  }
+}
+```
+
+`footer.json`
+
+```json
+{
+  "footer": {
+    "title": "KIUI",
+    "description": "KIUI is a modern UI design system to build fast and responsive web interfaces.",
+    "footerItems": {
+      "item1": {
+        "title": "Company",
+        "items": ["About", "Contact Us", "Careers", "Blog", "Contact"],
+        "links": ["#About", "#Us", "#Careers", "#Blog", "#Contact"]
+      },
+      "item2": {
+        "title": "Support",
+        "items": ["Help Center", "Documentation", "API Reference", "Status"],
+        "links": ["#Help", "#Documentation", "#API", "#Status"]
+      },
+      "item3": {
+        "title": "Legal",
+        "items": [
+          "Privacy Policy",
+          "Terms of Service",
+          "Cookie Policy",
+          "Licenses"
+        ],
+        "links": ["#Privacy", "#Terms", "#Cookie", "#Licenses"]
       }
     }
   }
 }
+```
 
+`socials.json`
+
+```json
+{
+  "socials": {
+    "socials_names": [
+      "instagram.com/yourName",
+      "x.com/yourName",
+      "t.me/yourName",
+      "linkedin.com/in/kiyan-abbasi",
+      "whatsapp",
+      "YouTube",
+      "facebook"
+    ]
+  }
+}
 ```
 
 ---
+
 ## 🛠️ Development
+
 To run the project locally:
 
 ```bash
 git clone https://github.com/alirezaabbasi-dev/KIUI.git
+
 cd KIUI
+
 npm install
-npm run dev:css
+
+npm run dev
 ```
+
 ---
+
 ## 🎨 Theming & Styling
 
 - To change colors, shadows, transitions, and styles:

@@ -1,61 +1,115 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KIUI Demo</title>
+    <link rel="shortcut icon" href="/kiui.png" type="image/png" />
+    <script type="module" crossorigin src="/assets/index.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index.css">
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KIUI Demo</title>
-  <link rel="shortcut icon" href="./kiui.png" type="image/png">
-  <link rel="stylesheet" href="./kiui.min.css">
-  <link rel="stylesheet" href="./components.conf.css">
-</head>
+  <body>
+    <header>
+      <!--! To use one of the components below, uncomment only one  -->
 
-<body>
-  <header>
-    <!--! To use one of the components below, uncomment only one  -->
-    <header-type-1></header-type-1>
-    <!-- <header-type-2></header-type-2> -->
-  </header>
-  <main class="container">
-    <!-- Type Writer -->
-    <div "">
-      <h2 id="KIUI-typewriter"></h2>
-    </div>
-    <div id="cards-wrapper">
-      <!-- Boxes -->
-      <box-card-1 data-title="just title">
-      </box-card-1>
-      <box-card-1 data-img="./kiui.png" data-title="title2" data-price="23">
-      </box-card-1>
-      <box-card-1 data-img="./kiui.png" data-button-title="Buy" data-title="title3" data-description="description"
-        data-price="12"></box-card-1>
-      <box-card-1 data-img="./kiui.png" data-title="title4" data-description="description" data-button-title="button"
-        data-button-link="#itsLink"></box-card-1>
-      <!-- Boxes -->
-    </div>
-  </main>
-  <footer>
-    <!--* To use one of the components below, uncomment only one  -->
-    <footer-type-1></footer-type-1>
-    <!-- <footer-type-2></footer-type-2> -->
-    <!-- <footer-type-3></footer-type-3> -->
-  </footer>
-  <script src="./kiui.min.js"></script>
-  <!-- Use KIUI Type Writer -->
-  <script src="./kiui.typewriter.min.js"></script>
-  <script>
-    initKIUITypeWriter(
-      [
-        "Welcome to KIUI",
-        "A lightweight",
-        "and",
-        "Modern Web Component UI Kit.",
-        "Let’s build something amazing together . . . ",
-      ],
-      100, // typing/deleting speed
-      1000 // pause between type/delete
-    );
-  </script>
-</body>
+      <header-type-1></header-type-1>
 
+      <header-type-2></header-type-2>
+
+      <!--! To use one of the components below, uncomment only one  -->
+    </header>
+
+    <main class="container">
+      <!--? Type Writer -->
+
+      <div>
+        <h2 id="KIUI-typewriter"></h2>
+      </div>
+
+      <!--? Type Writer -->
+
+      <!--* Show More Component -->
+
+      <div id="show-more">
+        <div id="show-more__content">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. In pariatur
+          quasi minus a quaerat vitae laboriosam qui iste, est voluptatum
+          nesciunt maxime voluptate. Explicabo saepe exercitationem ratione
+          illum autem doloribus quis, alias quas possimus consectetur? Dolorem
+          temporibus non enim saepe exercitationem obcaecati, velit
+          necessitatibus accusamus voluptatem natus. Natus nemo perferendis
+          aspernatur et, similique earum! Adipisci omnis modi consequuntur eos
+          sint aspernatur rerum officiis alias commodi aliquid possimus
+          laudantium, blanditiis minima magni distinctio. Molestias ipsam enim
+          recusandae excepturi dignissimos praesentium placeat minus, deserunt
+        </div>
+
+        <div id="show-more__shadow"></div>
+        <button id="show-more__button">Show More</button>
+      </div>
+
+      <!--* Show More Component -->
+
+      <div id="cards-wrapper">
+        <!--? Boxes -->
+        <box-card-1 data-title="just title"></box-card-1>
+
+        <box-card-1
+          data-img="/kiui.png"
+          data-title="title2"
+          data-price="23"
+        ></box-card-1>
+
+        <box-card-1
+          data-img="/kiui.png"
+          data-button-title="Buy"
+          data-title="title3"
+          data-description="description"
+          data-price="12"
+        ></box-card-1>
+
+        <box-card-1
+          data-img="/kiui.png"
+          data-title="title4"
+          data-description="description"
+          data-button-title="button"
+          data-button-link="#itsLink"
+        ></box-card-1>
+        <!--? Boxes -->
+      </div>
+    </main>
+
+    <footer>
+      <!--* To use one of the components below, uncomment only one  -->
+
+      <footer-type-1></footer-type-1>
+
+      <!-- <footer-type-2></footer-type-2> -->
+
+      <!-- <footer-type-3></footer-type-3> -->
+
+      <!--* To use one of the components below, uncomment only one  -->
+    </footer>
+
+    <!--* Scripts -->
+    <!--! Other Scripts ... -->
+    <script>
+      // ? InitProject
+      (async () => {
+        const navMenusDataRes = await fetch("/allData/header.json");
+        const navMenusData = await navMenusDataRes.json();
+        initHeader(navMenusData);
+
+        const footerDataRes = await fetch("/allData/footer.json");
+        const footerData = await footerDataRes.json();
+
+        const socialsDataRes = await fetch("/allData/socials.json");
+        const socialsData = await socialsDataRes.json();
+
+        const footer = { ...footerData.footer, socials: socialsData.socials };
+        initFooter(footer);
+      })();
+    </script>
+  </body>
 </html>
