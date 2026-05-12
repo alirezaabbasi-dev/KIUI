@@ -40,9 +40,10 @@ class ButtonPrimary extends HTMLElement {
 
   render() {
     const { content, bg, color } = this.dataset;
+    let { id = null } = this.dataset;
 
     this.innerHTML = `
-    <button class="cursor-pointer m-1 relative overflow-hidden px-4 py-2 rounded-md ripple bg-slate-900 text-white" style="background-color: ${bg} !important; color: ${color} !important;">
+    <button ${id ? (`id=${id}`) : ""}  class="cursor-pointer m-1 relative overflow-hidden px-4 py-2 rounded-md ripple bg-slate-900 text-white" style="background-color: ${bg} !important; color: ${color} !important;">
     ${content || "Click"}
     </button>`;
   }
