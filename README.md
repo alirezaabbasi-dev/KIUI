@@ -302,7 +302,7 @@ npm run dev
 ## 🌐 Browser Support
 
 ✅ Modern Browsers (Chrome, Firefox, Edge, Safari)
-❗ Not tested in IE (because it's 2025 😉)
+❗ Not tested in IE
 
 ---
 
