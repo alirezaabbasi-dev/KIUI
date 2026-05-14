@@ -1,4 +1,4 @@
-(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))o(s);new MutationObserver(s=>{for(const t of s)if(t.type==="childList")for(const e of t.addedNodes)e.tagName==="LINK"&&e.rel==="modulepreload"&&o(e)}).observe(document,{childList:!0,subtree:!0});function a(s){const t={};return s.integrity&&(t.integrity=s.integrity),s.referrerPolicy&&(t.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?t.credentials="include":s.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function o(s){if(s.ep)return;s.ep=!0;const t=a(s);fetch(s.href,t)}})();function y(n){function r(s,t){const e=s.classList.contains("open");s.classList.contains("translate-x-full")?(s.classList.toggle("translate-x-0"),s.classList.toggle("translate-x-full")):s.classList.toggle("hidden");const[i,l]=t.children;e?(i.classList.remove("opacity-0"),i.classList.add("opacity-100"),l.classList.remove("opacity-100"),l.classList.add("opacity-0"),s.classList.remove("open")):(i.classList.remove("opacity-100"),i.classList.add("opacity-0"),l.classList.remove("opacity-0"),l.classList.add("opacity-100"),s.classList.add("open"))}class a extends HTMLElement{async connectedCallback(){const t=await n;if(!t)return;const e=t.menu.items.map(l=>`<li class="menu-item"><a class="transition-colors">${l}</a></li>`).join(""),i=t.menu.items.map(l=>`<li class="menu-mobile-item"><a class="transition-colors">${l}</a></li>`).join("");this.render(t.menu.title,e,i),this.setDesktopLinks(t.menu.links),this.setMobileLinks(t.menu.links),this.setupMobileToggle()}render(t,e,i){this.innerHTML=`
+(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))r(s);new MutationObserver(s=>{for(const t of s)if(t.type==="childList")for(const e of t.addedNodes)e.tagName==="LINK"&&e.rel==="modulepreload"&&r(e)}).observe(document,{childList:!0,subtree:!0});function o(s){const t={};return s.integrity&&(t.integrity=s.integrity),s.referrerPolicy&&(t.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?t.credentials="include":s.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function r(s){if(s.ep)return;s.ep=!0;const t=o(s);fetch(s.href,t)}})();function y(n){function a(s,t){const e=s.classList.contains("open");s.classList.contains("translate-x-full")?(s.classList.toggle("translate-x-0"),s.classList.toggle("translate-x-full")):s.classList.toggle("hidden");const[i,l]=t.children;e?(i.classList.remove("opacity-0"),i.classList.add("opacity-100"),l.classList.remove("opacity-100"),l.classList.add("opacity-0"),s.classList.remove("open")):(i.classList.remove("opacity-100"),i.classList.add("opacity-0"),l.classList.remove("opacity-0"),l.classList.add("opacity-100"),s.classList.add("open"))}class o extends HTMLElement{async connectedCallback(){const t=await n;if(!t)return;const e=t.menu.items.map(l=>`<li class="menu-item"><a class="transition-colors">${l}</a></li>`).join(""),i=t.menu.items.map(l=>`<li class="menu-mobile-item"><a class="transition-colors">${l}</a></li>`).join("");this.render(t.menu.title,e,i),this.setDesktopLinks(t.menu.links),this.setMobileLinks(t.menu.links),this.setupMobileToggle()}render(t,e,i){this.innerHTML=`
       <nav class="menu-background bg-gray-100 dark:bg-gray-900 shadow-md fixed w-full top-0 left-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
 
@@ -34,7 +34,7 @@
           </ul>
         </div>
       </nav>
-    `}setDesktopLinks(t){this.querySelectorAll(".menu-item a").forEach((i,l)=>{i.setAttribute("href",t[l]||"#")})}setMobileLinks(t){this.querySelectorAll(".menu-mobile-item a").forEach((i,l)=>{i.setAttribute("href",t[l]||"#")})}setupMobileToggle(){const t=this.querySelector("#hamburger-btn"),e=this.querySelector("#mobile-menu"),i=t;t&&e&&i&&(i.children[0].classList.add("opacity-100"),i.children[1].classList.add("opacity-0"),t.addEventListener("click",()=>r(e,i)))}}class o extends HTMLElement{async connectedCallback(){const t=await n;if(!t)return;const e=t.menu.items.map(l=>`<li class="menu-item"><a class="transition-colors">${l}</a></li>`).join(""),i=t.menu.items.map(l=>`<li class="menu-mobile-item"><a class="transition-colors">${l}</a></li>`).join("");this.render(t.menu.title,e,i),this.setLinks(t.menu.links),this.setMobileLinks(t.menu.links),this.setupMobileToggle()}render(t,e,i){this.innerHTML=`
+    `}setDesktopLinks(t){this.querySelectorAll(".menu-item a").forEach((i,l)=>{i.setAttribute("href",t[l]||"#")})}setMobileLinks(t){this.querySelectorAll(".menu-mobile-item a").forEach((i,l)=>{i.setAttribute("href",t[l]||"#")})}setupMobileToggle(){const t=this.querySelector("#hamburger-btn"),e=this.querySelector("#mobile-menu"),i=t;t&&e&&i&&(i.children[0].classList.add("opacity-100"),i.children[1].classList.add("opacity-0"),t.addEventListener("click",()=>a(e,i)))}}class r extends HTMLElement{async connectedCallback(){const t=await n;if(!t)return;const e=t.menu.items.map(l=>`<li class="menu-item"><a class="transition-colors">${l}</a></li>`).join(""),i=t.menu.items.map(l=>`<li class="menu-mobile-item"><a class="transition-colors">${l}</a></li>`).join("");this.render(t.menu.title,e,i),this.setLinks(t.menu.links),this.setMobileLinks(t.menu.links),this.setupMobileToggle()}render(t,e,i){this.innerHTML=`
       <nav class="menu-background bg-gray-200 text-slate-800 dark:bg-gray-900 dark:text-slate-100 fixed top-0 left-0 w-full z-50 shadow">
         <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
 
@@ -77,23 +77,7 @@
           </ul>
         </div>
       </nav>
-    `}setLinks(t){this.querySelectorAll(".menu-item a").forEach((i,l)=>{i.setAttribute("href",t[l]||"#")})}setMobileLinks(t){this.querySelectorAll(".menu-mobile-item a").forEach((i,l)=>{i.setAttribute("href",t[l]||"#")})}setupMobileToggle(){const t=this.querySelector("#hamburger-btn"),e=this.querySelector("#mobile-menu"),i=t;t&&e&&i&&(i.children[0].classList.add("opacity-100"),i.children[1].classList.add("opacity-0"),t.addEventListener("click",()=>r(e,i)))}}customElements.define("header-type-1",a),customElements.define("header-type-2",o)}class w extends HTMLElement{async connectedCallback(){const{img:r,title:a,description:o,price:s,buttonTitle:t,buttonLink:e}=this.dataset;this.render(r,a,o,s,t,e)}render(r,a,o,s,t,e){this.innerHTML=`
-      <!-- Product Card -->
-      <div class="card w-full bg-gray-200 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
-        <img class="w-full h-60 object-cover" src="${r||"./kiui.png"}" alt="${a||"default alt"}" />
-
-        <div class="h-42 p-5 flex flex-col justify-between space-y-3">
-          ${a?`<h2 class="card-title text-lg sm:text-xl font-semibold text-gray-800 dark:text-white">${a}</h2>`:""}
-          ${o?`<p class="card-description text-sm text-gray-600 dark:text-gray-400">${o}</p>`:""}
-
-          ${s||e?`<div class="flex items-center justify-between mt-4">
-                  ${s?`<span class="card-price text-lg font-bold text-gray-600 dark:text-indigo-400">$${s}</span>`:"<div></div>"}
-                  ${t?`<a href="${e}" target="_blank" rel="noopener noreferrer" class="card-btn px-4 py-2 bg-gray-600 text-white rounded-xl hover:bg-gray-700 cursor-pointer transition">${t}</a>`:""}
-                </div>`:""}
-        </div>
-      </div>
-      <!-- Product Card -->
-    `}}customElements.define("box-card-1",w);function k(n){class r extends HTMLElement{async connectedCallback(){const e=await n;e&&(this.logoRender=s.bind(this),this.render(e))}render(e){const i=e.socials.socials_names?e.socials.socials_names.map(l=>{if(this.logoRender(l))return`<a href="https://${l}" target="_blank">${this.logoRender(l)}</a>`}).join(""):"";this.innerHTML=`
+    `}setLinks(t){this.querySelectorAll(".menu-item a").forEach((i,l)=>{i.setAttribute("href",t[l]||"#")})}setMobileLinks(t){this.querySelectorAll(".menu-mobile-item a").forEach((i,l)=>{i.setAttribute("href",t[l]||"#")})}setupMobileToggle(){const t=this.querySelector("#hamburger-btn"),e=this.querySelector("#mobile-menu"),i=t;t&&e&&i&&(i.children[0].classList.add("opacity-100"),i.children[1].classList.add("opacity-0"),t.addEventListener("click",()=>a(e,i)))}}customElements.define("header-type-1",o),customElements.define("header-type-2",r)}function w(n){class a extends HTMLElement{async connectedCallback(){const e=await n;e&&(this.logoRender=s.bind(this),this.render(e))}render(e){const i=e.socials.socials_names?e.socials.socials_names.map(l=>{if(this.logoRender(l))return`<a href="https://${l}" target="_blank">${this.logoRender(l)}</a>`}).join(""):"";this.innerHTML=`
     <div class="footer bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-300 pt-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Top  -->
@@ -136,7 +120,7 @@
       </div>
     </div>
 </div>
-    `}}class a extends HTMLElement{async connectedCallback(){const e=await n;e&&(this.logoRender=s.bind(this),this.render(e))}render(e){const i=e.socials.socials_names?e.socials.socials_names.map(l=>{if(this.logoRender(l))return`<a href="https://${l}" target="_blank">${this.logoRender(l)}</a>`}).join(""):"";this.innerHTML=`
+    `}}class o extends HTMLElement{async connectedCallback(){const e=await n;e&&(this.logoRender=s.bind(this),this.render(e))}render(e){const i=e.socials.socials_names?e.socials.socials_names.map(l=>{if(this.logoRender(l))return`<a href="https://${l}" target="_blank">${this.logoRender(l)}</a>`}).join(""):"";this.innerHTML=`
     <div class="footer bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-200 py-12">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-10">
@@ -179,7 +163,7 @@
         </div>
       </div>
     </div>
-    `}}class o extends HTMLElement{async connectedCallback(){const e=await n;e&&(this.logoRender=s.bind(this),this.render(e))}render({title:e,description:i,footerItems:l,socials:d}){const{item1:h,item2:g,item3:u}=l,v=d.socials_names?d.socials_names.map(c=>{if(this.logoRender(c))return`<a href="https://${c}" target="_blank">${this.logoRender(c)}</a>`}).join(""):"";this.innerHTML=`
+    `}}class r extends HTMLElement{async connectedCallback(){const e=await n;e&&(this.logoRender=s.bind(this),this.render(e))}render({title:e,description:i,footerItems:l,socials:d}){const{item1:h,item2:p,item3:u}=l,v=d.socials_names?d.socials_names.map(c=>{if(this.logoRender(c))return`<a href="https://${c}" target="_blank">${this.logoRender(c)}</a>`}).join(""):"";this.innerHTML=`
     <footer class="footer  bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100 py-16 text-sm">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between lg:flex-row flex-col space-y-4 lg:space-y-0">
 
@@ -205,9 +189,9 @@
           </div>
 
           <div>
-            <h3 class="footer-item-title text-lg footer-title text-gray-400 font-bold">More on The ${g.title}</h3>
+            <h3 class="footer-item-title text-lg footer-title text-gray-400 font-bold">More on The ${p.title}</h3>
             <ul class="space-y-3 mt-4">
-              ${g.items.map((c,m)=>`<li class="footer-item hover:underline hover:underline"><a href=${g.links[m]}>${c}</a></li>`).join("")}
+              ${p.items.map((c,m)=>`<li class="footer-item hover:underline hover:underline"><a href=${p.links[m]}>${c}</a></li>`).join("")}
             </ul>
           </div>
           <div>
@@ -239,4 +223,23 @@
                     <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
                     </svg>`;case e.includes("linkedin"):return`<svg xmlns="http://www.w3.org/2000/svg" class="footer-icon" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
                       <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
-                      </svg>`;default:return""}}customElements.define("footer-type-1",r),customElements.define("footer-type-2",a),customElements.define("footer-type-3",o)}const L=document.querySelector("#show-more"),p=document.querySelector("#show-more__button");p.addEventListener("click",()=>{p.textContent=p.textContent==="Show More"?"Show Less":"Show More",L.classList.toggle("active")});const $=document,f=$.querySelector("#KIUI-typewriter");let x=null,b=null;function M(n=[],r=100,a=1e3){let o=0,s=0;function t(){const i=n[o];x=setInterval(()=>{f.textContent+=i[s],s++,s>=i.length&&(clearInterval(x),setTimeout(()=>e(),a))},r)}function e(){const i=n[o];b=setInterval(()=>{s--,f.textContent=i.slice(0,s),s<=0&&(clearInterval(b),o=(o+1)%n.length,setTimeout(()=>t(),a))},r)}t()}window.initKIUITypeWriter=M;window.initHeader=y;window.initFooter=k;
+                      </svg>`;default:return""}}customElements.define("footer-type-1",a),customElements.define("footer-type-2",o),customElements.define("footer-type-3",r)}class k extends HTMLElement{async connectedCallback(){const{img:a,title:o,description:r,price:s,buttonTitle:t,buttonLink:e}=this.dataset;this.render(a,o,r,s,t,e)}render(a,o,r,s,t,e){this.innerHTML=`
+      <!-- Product Card -->
+      <div class="card w-full bg-gray-200 dark:bg-gray-800 rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
+        <img class="w-full h-60 object-cover" src="${a||"./kiui.png"}" alt="${o||"default alt"}" />
+
+        <div class="h-42 p-5 flex flex-col justify-between space-y-3">
+          ${o?`<h2 class="card-title text-lg sm:text-xl font-semibold text-gray-800 dark:text-white">${o}</h2>`:""}
+          ${r?`<p class="card-description text-sm text-gray-600 dark:text-gray-400">${r}</p>`:""}
+
+          ${s||e?`<div class="flex items-center justify-between mt-4">
+                  ${s?`<span class="card-price text-lg font-bold text-gray-600 dark:text-indigo-400">$${s}</span>`:"<div></div>"}
+                  ${t?`<a href="${e}" target="_blank" rel="noopener noreferrer" class="card-btn px-4 py-2 bg-gray-600 text-white rounded-xl hover:bg-gray-700 cursor-pointer transition">${t}</a>`:""}
+                </div>`:""}
+        </div>
+      </div>
+      <!-- Product Card -->
+    `}}customElements.define("box-card-1",k);document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll(".ripple").forEach(n=>{n.addEventListener("click",function(a){const o=document.createElement("span"),r=Math.max(this.clientWidth,this.clientHeight),s=r/2;o.style.width=o.style.height=`${r}px`,o.style.left=`${a.clientX-this.getBoundingClientRect().left-s}px`,o.style.top=`${a.clientY-this.getBoundingClientRect().top-s}px`,o.classList.add("ripple-effect");const t=this.querySelector(".ripple-effect");t&&t.remove(),this.appendChild(o)})})});class L extends HTMLElement{async connectedCallback(){this.render()}render(){const{content:a,bg:o,color:r}=this.dataset;let{id:s=null}=this.dataset;this.innerHTML=`
+    <button ${s?`id=${s}`:""}  class="cursor-pointer m-1 relative overflow-hidden px-4 py-2 rounded-md ripple bg-slate-900 text-white" style="background-color: ${o} !important; color: ${r} !important;">
+    ${a||"Click"}
+    </button>`}}customElements.define("button-primary",L);const $=document,f=$.querySelector("#KIUI-typewriter");let x=null,b=null;function M(n=[],a=100,o=1e3){let r=0,s=0;function t(){const i=n[r];x=setInterval(()=>{f.textContent+=i[s],s++,s>=i.length&&(clearInterval(x),setTimeout(()=>e(),o))},a)}function e(){const i=n[r];b=setInterval(()=>{s--,f.textContent=i.slice(0,s),s<=0&&(clearInterval(b),r=(r+1)%n.length,setTimeout(()=>t(),o))},a)}t()}window.initKIUITypeWriter=M;const C=document.querySelector("#show-more"),g=document.querySelector("#show-more__button");g.addEventListener("click",()=>{g.textContent=g.textContent==="Show More"?"Show Less":"Show More",C.classList.toggle("active")});window.initHeader=y;window.initFooter=w;

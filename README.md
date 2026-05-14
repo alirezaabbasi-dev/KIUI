@@ -2,7 +2,7 @@
 
 ---
 
-<img src="kiui.png">
+<img src="./public/kiui.png">
 
 A lightweight, modern Web Component UI Kit – ready to plug into your HTML projects.
 
@@ -12,15 +12,15 @@ A lightweight, modern Web Component UI Kit – ready to plug into your HTML proj
 
 ## 📦 Files Overview
 
-| File                  | Description                                  |
-| --------------------- | -------------------------------------------- |
-| `kiui.min.js`         | Core JavaScript containing Web Components    |
-| `kiui.min.css`        | Main CSS for layout and design               |
-| `components.conf.css` | Theme/style config – customize colors easily |
-| `allData/*.json`      | Dynamic content used by components           |
-| `index.html`          | Live demo file – test components quickly     |
-| `kiui.png`            | Default image/logo used in cards/headers     |
-| `kiui.typewriter.min` | Type writer Effect                           |
+| File                 | Description                                  |
+| -------------------- | -------------------------------------------- |
+| `/assets/index.js`   | Core JavaScript containing Web Components    |
+| `/assets/app.js`     | You can init Kiui project                    |
+| `/assets/index.css`  | Main CSS for layout and design               |
+| `/assets/custom.css` | Theme/style config – customize colors easily |
+| `allData/*.json`     | Dynamic content used by components           |
+| `index.html`         | Live demo file – test components quickly     |
+| `kiui.png`           | Default image/logo used in cards/headers     |
 
 ---
 
@@ -41,36 +41,39 @@ You can either clone this repo or copy the following files into your project:
 ```
 /your-project/
 │
-├── kiui.min.js
-├── kiui.min.css
-├── components.conf.css (optional)
 ├── /allData/*.json
+├── /assets/*
+├─────── index.js
+├─────── app.js
+├─────── index.css
+├─────── custom.css (optional)
 └── your.html
 ```
 
 ---
 
-### 2. Include in Your HTML
+### 2. Include in Your HTML and JS
+HTML
 
 ```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KIUI Demo</title>
-    <link rel="shortcut icon" href="./kiui.png" type="image/png" />
-    <link rel="stylesheet" href="./src/styles/main.css" />
-    <link rel="stylesheet" href="./src/components/components.conf.css" />
+    <link rel="shortcut icon" href="/kiui.png" type="image/png" />
+    <script type="module" crossorigin src="/assets/index.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index.css" />
   </head>
 
   <body>
     <header>
       <!--! To use one of the components below, uncomment only one  -->
 
-      <header-type-1></header-type-1>
+      <!-- <header-type-1></header-type-1> -->
 
-      <!-- <header-type-2></header-type-2> -->
+      <header-type-2></header-type-2>
 
       <!--! To use one of the components below, uncomment only one  -->
     </header>
@@ -111,13 +114,13 @@ You can either clone this repo or copy the following files into your project:
         <box-card-1 data-title="just title"></box-card-1>
 
         <box-card-1
-          data-img="./kiui.png"
+          data-img="/kiui.png"
           data-title="title2"
           data-price="23"
         ></box-card-1>
 
         <box-card-1
-          data-img="./kiui.png"
+          data-img="/kiui.png"
           data-button-title="Buy"
           data-title="title3"
           data-description="description"
@@ -125,7 +128,7 @@ You can either clone this repo or copy the following files into your project:
         ></box-card-1>
 
         <box-card-1
-          data-img="./kiui.png"
+          data-img="/kiui.png"
           data-title="title4"
           data-description="description"
           data-button-title="button"
@@ -133,6 +136,12 @@ You can either clone this repo or copy the following files into your project:
         ></box-card-1>
         <!--? Boxes -->
       </div>
+      <button-primary
+        data-content="Click me"
+        data-bg="black"
+        data-color="#fff"
+        data-id="btn-1"
+      ></button-primary>
     </main>
 
     <footer>
@@ -148,50 +157,46 @@ You can either clone this repo or copy the following files into your project:
     </footer>
 
     <!--* Scripts -->
-    <script type="module" src="./index.js"></script>
-
-    <!--! Use KIUI Type Writer -->
-    <script src="./src/effects/typewriter.js"></script>
-    <script>
-      initKIUITypeWriter(
-        [
-          "Welcome to KIUI",
-          "A lightweight",
-          "and",
-          "Modern Web Component UI Kit.",
-          "Let’s build something amazing together . . . ",
-        ],
-        100, // typing/deleting speed
-        1000 // pause between type/delete
-      );
-    </script>
-
+    <script src="./assets/app.js"></script>
     <!--! Other Scripts ... -->
-    <script>
-      // ? InitProject
-
-      (async () => {
-        const navMenus = await fetch("./src/allData/header.json")
-          .then((res) => res.json())
-          .then((data) => data);
-
-        initHeader(navMenus);
-
-        const footerData = await fetch("./src/allData/footer.json")
-          .then((res) => res.json())
-          .then((data) => data);
-
-        const socials = await fetch("./src/allData/socials.json")
-          .then((res) => res.json())
-          .then((data) => data);
-
-        const footer = { ...footerData.footer, socials: socials.socials };
-
-        initFooter(footer);
-      })();
-    </script>
   </body>
 </html>
+```
+JavaScript (app.js)
+
+```js
+window.addEventListener("load", () => {
+  // ? InitProject
+  (async () => {
+    const navMenusDataRes = await fetch("/allData/header.json");
+    const navMenusData = await navMenusDataRes.json();
+    initHeader(navMenusData);
+
+    const footerDataRes = await fetch("/allData/footer.json");
+    const footerData = await footerDataRes.json();
+
+    const socialsDataRes = await fetch("/allData/socials.json");
+    const socialsData = await socialsDataRes.json();
+
+    const footer = { ...footerData.footer, socials: socialsData.socials };
+    initFooter(footer);
+  })();
+
+  //  Use KIUI Type Writer
+
+  initKIUITypeWriter(
+    [
+      "Welcome to KIUI",
+      "A lightweight",
+      "and",
+      "Modern Web Component UI Kit.",
+      "Let’s build something amazing together . . . ",
+    ],
+    100, // typing/deleting speed
+    1000, // pause between type/delete
+  );
+});
+
 ```
 
 ---
@@ -289,7 +294,7 @@ npm run dev
 ## 🎨 Theming & Styling
 
 - To change colors, shadows, transitions, and styles:
-  Edit the `components.conf.css` file and **uncomment** the section you want to modify.
+  Edit the `custom.css` file and **uncomment** the section you want to modify.
 - You can apply your own color palette, spacing, fonts, etc.
 
 ---
