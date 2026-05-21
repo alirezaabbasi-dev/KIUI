@@ -26,8 +26,18 @@ A lightweight, modern Web Component UI Kit – ready to plug into your HTML proj
 
 ## 📦 Installation
 
+via npm
+
 ```bash
 npm i kiui-kit
+```
+
+via cdn
+
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/kiui-kit@latest/dist/assets/index.css">
+<script src="https://cdn.jsdelivr.net/npm/kiui-kit@latest/dist/assets/index.js"><script>
+<script src="https://cdn.jsdelivr.net/npm/kiui-kit@latest/dist/assets/app.js"><script>
 ```
 
 ---
