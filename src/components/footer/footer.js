@@ -1,3 +1,7 @@
+/**
+ * create footer html template
+ * @param {object} footerData
+ */
 export default function initFooter(footerData) {
   class FooterType1 extends HTMLElement {
     async connectedCallback() {
@@ -13,7 +17,7 @@ export default function initFooter(footerData) {
             .map((social) => {
               if (this.logoRender(social)) {
                 return `<a href="https://${social}" target="_blank">${this.logoRender(
-                  social
+                  social,
                 )}</a>`;
               }
             })
@@ -43,7 +47,7 @@ export default function initFooter(footerData) {
           ${footer.footerItems.item1.items
             .map(
               (item, index) =>
-                `<li><a href="${footer.footerItems.item1.links[index]}" class="footer-item hover:underline">${item}</a></li>`
+                `<li><a href="${footer.footerItems.item1.links[index]}" class="footer-item hover:underline">${item}</a></li>`,
             )
             .join("")}
           </ul>
@@ -57,7 +61,7 @@ export default function initFooter(footerData) {
           ${footer.footerItems.item2.items
             .map(
               (item, index) =>
-                `<li><a href="${footer.footerItems.item2.links[index]}" class="footer-item hover:underline">${item}</a></li>`
+                `<li><a href="${footer.footerItems.item2.links[index]}" class="footer-item hover:underline">${item}</a></li>`,
             )
             .join("")}
           </ul>
@@ -71,7 +75,7 @@ export default function initFooter(footerData) {
           ${footer.footerItems.item3.items
             .map(
               (item, index) =>
-                `<li><a href="${footer.footerItems.item3.links[index]}" class="footer-item hover:underline">${item}</a></li>`
+                `<li><a href="${footer.footerItems.item3.links[index]}" class="footer-item hover:underline">${item}</a></li>`,
             )
             .join("")}
           </ul>
@@ -81,8 +85,8 @@ export default function initFooter(footerData) {
       <!-- Bottom  -->
       <div class="flex flex-col md:flex-row justify-between items-center py-6 gap-4">
         <p class="text-sm copyright">&copy; ${new Date().getFullYear()} ${
-        footer.title
-      }. All rights reserved.</p>
+          footer.title
+        }. All rights reserved.</p>
          <div class="flex gap-4">
             ${socialsHTML}
           </div>
@@ -107,7 +111,7 @@ export default function initFooter(footerData) {
             .map((social) => {
               if (this.logoRender(social)) {
                 return `<a href="https://${social}" target="_blank">${this.logoRender(
-                  social
+                  social,
                 )}</a>`;
               }
             })
@@ -152,12 +156,12 @@ export default function initFooter(footerData) {
                 ${col.items
                   .map(
                     (item, i) =>
-                      `<li class="footer-item"><a href="${col.links[i]}" class="hover:underline">${item}</a></li>`
+                      `<li class="footer-item"><a href="${col.links[i]}" class="hover:underline">${item}</a></li>`,
                   )
                   .join("")}
               </ul>
             </div>
-          `
+          `,
             )
             .join("")}
         </div>
@@ -165,8 +169,8 @@ export default function initFooter(footerData) {
         <!-- Bottom Social -->
         <div class="footer-bottom-social mt-12 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 border-t border-gray-700 pt-6 gap-4">
           <p class="copyright">&copy; ${new Date().getFullYear()} ${
-        footer.title
-      }. All rights reserved.</p>
+            footer.title
+          }. All rights reserved.</p>
           <div class="flex gap-4">
             ${socialsHTML}
           </div>
@@ -193,7 +197,7 @@ export default function initFooter(footerData) {
             .map((social) => {
               if (this.logoRender(social)) {
                 return `<a href="https://${social}" target="_blank">${this.logoRender(
-                  social
+                  social,
                 )}</a>`;
               }
             })
@@ -226,7 +230,7 @@ export default function initFooter(footerData) {
               ${item1.items
                 .map(
                   (item, i) =>
-                    `<li class="footer-item hover:underline"><a href=${item1.links[i]}>${item}</a></li>`
+                    `<li class="footer-item hover:underline"><a href=${item1.links[i]}>${item}</a></li>`,
                 )
                 .join("")}
             </ul>
@@ -240,7 +244,7 @@ export default function initFooter(footerData) {
               ${item2.items
                 .map(
                   (item, i) =>
-                    `<li class="footer-item hover:underline hover:underline"><a href=${item2.links[i]}>${item}</a></li>`
+                    `<li class="footer-item hover:underline"><a href=${item2.links[i]}>${item}</a></li>`,
                 )
                 .join("")}
             </ul>
@@ -253,7 +257,7 @@ export default function initFooter(footerData) {
               ${item3.items
                 .map(
                   (item, i) =>
-                    `<li class="footer-item w-fit"><a class="hover:underline" href=${item3.links[i]}>${item}</a></li>`
+                    `<li class="footer-item w-fit"><a class="hover:underline" href=${item3.links[i]}>${item}</a></li>`,
                 )
                 .join("")}
             </ul>
@@ -266,7 +270,7 @@ export default function initFooter(footerData) {
               ${item3.items
                 .map(
                   (item, i) =>
-                    `<li class="footer-item hover:underline"><a href=${item3.links[i]}>${item}</a></li>`
+                    `<li class="footer-item hover:underline"><a href=${item3.links[i]}>${item}</a></li>`,
                 )
                 .join("")}
             </ul>

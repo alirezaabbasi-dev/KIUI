@@ -1,5 +1,8 @@
+/**
+ * create header html template
+ * @param {object} headerData
+ */
 export default function initHeader(headerData) {
-
   function toggleMobileMenu(menuElement, iconWrapper) {
     const isOpen = menuElement.classList.contains("open");
 
@@ -35,13 +38,13 @@ export default function initHeader(headerData) {
       const menuHTML = data.menu.items
         .map(
           (item) =>
-            `<li class="menu-item"><a class="transition-colors">${item}</a></li>`
+            `<li class="menu-item"><a class="transition-colors">${item}</a></li>`,
         )
         .join("");
       const menuMobileHTML = data.menu.items
         .map(
           (item) =>
-            `<li class="menu-mobile-item"><a class="transition-colors">${item}</a></li>`
+            `<li class="menu-mobile-item"><a class="transition-colors">${item}</a></li>`,
         )
         .join("");
 
@@ -115,7 +118,7 @@ export default function initHeader(headerData) {
         iconWrapper.children[1].classList.add("opacity-0");
 
         hamburgerBtn.addEventListener("click", () =>
-          toggleMobileMenu(mobileMenu, iconWrapper)
+          toggleMobileMenu(mobileMenu, iconWrapper),
         );
       }
     }
@@ -127,13 +130,13 @@ export default function initHeader(headerData) {
       const menuHTML = data.menu.items
         .map(
           (item) =>
-            `<li class="menu-item"><a class="transition-colors">${item}</a></li>`
+            `<li class="menu-item"><a class="transition-colors">${item}</a></li>`,
         )
         .join("");
       const menuMobileHTML = data.menu.items
         .map(
           (item) =>
-            `<li class="menu-mobile-item"><a class="transition-colors">${item}</a></li>`
+            `<li class="menu-mobile-item"><a class="transition-colors">${item}</a></li>`,
         )
         .join("");
 
@@ -212,7 +215,7 @@ export default function initHeader(headerData) {
         iconWrapper.children[1].classList.add("opacity-0");
 
         hamburgerBtn.addEventListener("click", () =>
-          toggleMobileMenu(mobileMenu, iconWrapper)
+          toggleMobileMenu(mobileMenu, iconWrapper),
         );
       }
     }

@@ -4,7 +4,24 @@ const typeWriter = $.querySelector("#KIUI-typewriter");
 
 let createCharTimer = null;
 let deleteCharTimer = null;
-
+/**
+ * initialize KIUI TypeWriter
+ * @param {Array} textArray
+ * @param {number} time -typing/deleting speed
+ * @param {number} pause -pause between type/delete
+ * @example
+ * initKIUITypeWriter(
+    [
+      "Welcome to KIUI",
+      "A lightweight",
+      "and",
+      "Modern Web Component UI Kit.",
+      "Let’s build something amazing together . . . ",
+    ],
+    100, // typing/deleting speed
+    1000, // pause between type/delete
+  );
+ */
 function initKIUITypeWriter(textArray = [], time = 100, pause = 1000) {
   let textIndex = 0;
   let charIndex = 0;
