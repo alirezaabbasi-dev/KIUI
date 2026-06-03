@@ -1,8 +1,10 @@
 # 🧩 KIUI Kit
 
+## A lightweight and Modern Web Component UI Kit
+
 ---
 
-<img src="./public/kiui.png">
+<img src="./public/kiui.png" />
 
 A lightweight, modern Web Component UI Kit – ready to plug into your HTML projects.
 
@@ -36,7 +38,9 @@ via cdn
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/kiui-kit@latest/dist/assets/index.css">
+
 <script src="https://cdn.jsdelivr.net/npm/kiui-kit@latest/dist/assets/index.js"><script>
+
 <script src="https://cdn.jsdelivr.net/npm/kiui-kit@latest/dist/assets/app.js"><script>
 ```
 
